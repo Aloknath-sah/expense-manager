@@ -2,14 +2,19 @@ import { Button, Grid, makeStyles } from '@material-ui/core';
 import React, {useEffect} from 'react';
 import { useSelector, useDispatch } from 'react-redux';
 import { deleteText } from '../Redux/action';
+import DeleteIcon from '@material-ui/icons/Delete';
 
 const useStyles = makeStyles((theme) => ({
     root: {
         display: "flex",
         justifyContent:"center",
         margin: 10,
+        width: "25%",
+        margin:"auto",
+        backgroundColor:"#eeeeee",
         '& > *':{
-            padding: 10
+            padding: 10,
+            flex: 1
         }
     },
     
@@ -25,13 +30,16 @@ const History = () => {
         dispatch(deleteText(id))
     }
     return (
-        <Grid style={{backgroundColor:"#4dabf5", marginTop: -20, height:"280px"}}>
+        <Grid>
         <h2>HISTORY</h2>
+        <div style={{width:"25%", margin:"auto"}} >
+            <hr/>
+        </div>
         {
             data.map((item) => (
                 <div key={item.id} className={classes.root}>
-                    <div style={{color: "white", fontSize:"20px"}} >{item.text}</div>
-                    <Button variant="contained" color="secondary" onClick={()=> handleDelete(item.id)}>delete</Button>
+                    <div style={{fontSize:"20px"}} >{item.text}</div>
+                    <DeleteIcon onClick={()=> handleDelete(item.id)}/>
                 </div>
             ))
         }

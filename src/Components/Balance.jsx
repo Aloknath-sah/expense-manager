@@ -7,9 +7,9 @@ const Balance = () => {
     const total = amount.reduce((acc, item)=> (acc += item), 0)
 
     return (
-        <Grid style={{backgroundColor:"#ffa733", marginTop: -20}} >
-            <h3>BALANCE</h3>
-            <div style={{color:"white", fontSize: 30, fontWeight:"bold"}} >Rs.  {total}</div> 
+        <Grid  >
+            <h3>YOUR BALANCE</h3>
+            <div style={{fontSize: 30, fontWeight:"bold"}} >Rs.  {total}</div> 
         </Grid>
     );
 }

@@ -8,11 +8,11 @@ import { Grid } from '@material-ui/core';
 function App() {
   return (
     <Grid className="App">
-      <h1 style={{backgroundColor:"#651fff", color:"white", padding: 10, marginTop: -10}} >EXPENSE MANAGER</h1>
+      <h1 style={{ padding: 10, marginTop: -10}} >EXPENSE MANAGER</h1>
       <Balance/>
       <Display/>
-      <AddNew/>
       <History/>
+      <AddNew/>
     </Grid>
   );
 }
